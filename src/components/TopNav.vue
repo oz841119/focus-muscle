@@ -6,7 +6,7 @@
     </h1>
     <div class="rightNav">
       <div @click="openWeightBox()">重量換算</div>
-      <div @click="openBMIBox">BMI計算(建構中)</div>
+      <div @click="openBMIBox">BMI計算</div>
       <transition name="fade">
         <WeightBox class="weightBox" v-if="isWeightBox" @colseBoxFatherFn="openWeightBox"/>
       </transition>
