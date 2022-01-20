@@ -198,7 +198,6 @@ export default {
     width: 100vh;
   }
 
-
   @media (max-width: 850px) {
 
     .muscularAnatomy {
