@@ -1,3 +1,4 @@
-node_modules
+node_modules/
+focus-muscle/
 *~
 .DS_Store
