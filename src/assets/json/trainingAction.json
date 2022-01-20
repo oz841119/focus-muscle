@@ -1,0 +1,78 @@
+{
+  "greatAdductor": {
+    "name": "內收肌",
+    "actions": ["坐姿夾腿","站姿腿內側拉引"]
+  },
+  "pectoralis": {
+    "name": "胸大肌",
+    "actions": ["啞鈴平板臥推"]
+  },
+  "oblique": {
+    "name": "腹斜肌",
+    "actions": ["卷腹","反式捲腹","側棒式"]
+  },
+  "arm": {
+    "name": "前臂",
+    "actions": ["抓抓","手臂彎舉"]
+  },
+  "rectusFemoris": {
+    "name": "股直肌",
+    "actions": ["腿屈伸(腳尖直向)","深蹲"]
+  },
+  "biceps": {
+    "name": "肱二頭肌",
+    "actions": ["槓鈴彎舉","啞鈴彎舉","牧師凳"]
+  },
+  "deltoid": {
+    "name": "三角肌",
+    "actions": ["肩推(前中束 視角度)","側平舉(中束)","臉拉(後束)","反向飛鳥(後束) *肩頰骨不刻意收","俯身飛鳥(後束)"]
+  },
+  "vastusLateralis": {
+    "name": "股外側頭",
+    "actions": ["深蹲"]
+  },
+  "upperTrapezius": {
+    "name": "上斜方肌",
+    "actions": ["代償(誤)","聳肩類動作"]
+  },
+  "upperAndLowerTrapezius": {
+    "name": "中下斜方肌",
+    "actions": ["水平划船(寬握)"]
+  },
+  "gluteusMaximus": {
+    "name": "臀大肌",
+    "actions": ["深蹲","臀推","保加利亞分腿蹲"]
+  },
+  "latissimusDorsi": {
+    "name": "背闊肌",
+    "actions": ["引體向上","槓鈴划船","啞鈴划船","高位下拉","直臂下壓"]
+  },
+  "triceps": {
+    "name": "肱三頭肌",
+    "actions": ["窄距臥推","雙槓撐體(視角度)","碎顱者","啞鈴三頭肌屈伸","繩索三頭肌屈伸","cable下壓"]
+  },
+  "infraspinatus": {
+    "name": "岡下肌(肩袖肌群之一)",
+    "actions": ["* 肩內外旋功能","啞鈴側邊旋拉","cable旋拉"]
+  },
+  "medialGastrocnemius": {
+    "name": "內腓腸肌",
+    "actions": ["提腫"]
+  },
+  "lateralGastrocnemius": {
+    "name": "外腓腸肌",
+    "actions": ["提腫"]
+  },
+  "externalObliqueAbdominis": {
+    "name": "腹外斜肌",
+    "actions": ["側捲腹"]
+  },
+  "bicepsFemoris": {
+    "name": "股二頭肌",
+    "actions": ["勾腿","深蹲"]
+  },
+  "abs": {
+    "name": "腹肌",
+    "actions": ["卷腹"]
+  }
+}
