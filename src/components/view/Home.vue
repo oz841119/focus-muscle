@@ -2,7 +2,7 @@
   <div class="home">
     <TopNav/>
     <MuscularAnatomy class="muscularAnatomy"/>
-    <div class="githubImg"><img class="" src="../../assets/img/github.png" alt=""></div>
+    <a href="https://github.com/oz841119/focus-muscle" target="_blank"><div class="githubImg"><img class="" src="../../assets/img/github.png" alt=""></div></a>
   </div>
 </template>
 
