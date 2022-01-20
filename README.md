@@ -8,7 +8,7 @@
 ## Project setup(開始項目)
 ```
 npm install
-(確保裝置中以安裝Node.js環境，在資料夾中執行命令安裝所需依賴)
+(確保裝置中已具備Node.js環境，在資料夾中執行命令安裝所需依賴)
 ```
 
 ### Compiles and hot-reloads for development
