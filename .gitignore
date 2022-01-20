@@ -1,4 +1,5 @@
 node_modules/
 focus-muscle/
+dist/
 *~
 .DS_Store
