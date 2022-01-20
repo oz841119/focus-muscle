@@ -57,11 +57,11 @@
   },
   "medialGastrocnemius": {
     "name": "內腓腸肌",
-    "actions": ["提腫"]
+    "actions": ["提踵"]
   },
   "lateralGastrocnemius": {
     "name": "外腓腸肌",
-    "actions": ["提腫"]
+    "actions": ["提踵"]
   },
   "externalObliqueAbdominis": {
     "name": "腹外斜肌",
