@@ -6,7 +6,13 @@
     </div>
     <hr/>
       <div class="content">
-        <a class="actions mt8" v-for="(item,index) in trainingAction" :key="index" :href="'http://google.com.tw/search?q='+item"  target="_blank">{{item}}<br/></a>
+        <div class="mt8" v-for="(item,index) in trainingAction" :key="index">
+          <a class="actions" :href="'http://google.com.tw/search?q='+item"  target="_blank">{{item}}</a>
+          <span class="good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">讚</span>
+        </div>
+        <!-- <a class="actions mt8" v-for="(item,index) in trainingAction" :key="index" :href="'http://google.com.tw/search?q='+item"  target="_blank">
+          {{item}}
+        </a> -->
         <div class="ps">
           <div>複合性動作皆有輔助肌群共同發力<br/>本列表提供能對該部位大量刺激的訓練動作<br/>當角度或其他部位控制不同時 可能會有不同的壓力模式<br/>解剖圖、肌群名稱及訓練動作具有非正確性 待日後修正<br/></div>
           <div class="advices cp">提供意見(建構中)</div>
@@ -22,11 +28,13 @@ export default {
   data() {
     return {
       title: '',
-      trainingAction: ''
+      trainingAction: '',
+      alreadySubmitted: [],
     }
   },
   mounted(){
     this.judgmentMuscleName(this._props.muscleName)
+    this.alreadySubmitted = JSON.parse(window.localStorage.getItem("alreadySubmitted"))
   },
   methods: {
     closeBox() {
@@ -35,6 +43,16 @@ export default {
     judgmentMuscleName(propsMuscleName) {
       this.title = trainingActionJSON[propsMuscleName].name
       this.trainingAction = trainingActionJSON[propsMuscleName].actions
+    },
+    submitGood(item) { // 按讚後push進數組 
+      if(this.alreadySubmitted.includes(item)){ // 判斷是否按過讚 若按過則移除元素
+        let itemIndex = this.alreadySubmitted.indexOf(item)
+        this.alreadySubmitted.splice(itemIndex, 1)
+        window.localStorage.setItem('alreadySubmitted', JSON.stringify(this.alreadySubmitted));
+        return
+      }
+      this.alreadySubmitted.push(item)
+      window.localStorage.setItem('alreadySubmitted', JSON.stringify(this.alreadySubmitted));
     }
   }
 }
@@ -106,6 +124,23 @@ export default {
     display: inline-block;
     border-bottom:1px solid #fff;
   }
+
+  .good {
+    box-sizing: border-box;
+    padding: 1px;
+    font-size: 12px;
+    margin-left: 10px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .alreadySub {
+    border: none;
+    cursor: default;
+    background-color: rgb(5, 111, 232);
+  }
+
 
   @media (max-width: 850px) {
     .muscleBox {
