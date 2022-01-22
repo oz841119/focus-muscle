@@ -6,9 +6,10 @@
     </div>
     <hr/>
       <div class="content">
-        <div class="mt8" v-for="(item,index) in trainingAction" :key="index">
+        <div class="actionWrap mt8" v-for="(item,index) in trainingAction" :key="index">
           <a class="actions" :href="'http://google.com.tw/search?q='+item"  target="_blank">{{item}}</a>
-          <span class="good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">讚</span>
+          <!-- <span class="good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">讚</span> -->
+          <span class="material-icons good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">thumb_up</span>
         </div>
         <div class="ps">
           <div>複合性動作皆有輔助肌群共同發力<br/>本列表提供能對該部位大量刺激的訓練動作<br/>當角度或其他部位控制不同時 可能會有不同的壓力模式<br/>解剖圖、肌群名稱及訓練動作具有非正確性 待日後修正<br/></div>
@@ -99,6 +100,11 @@ export default {
     padding: 10px 20px;
   }
 
+  .actionWrap {
+    display: flex;
+    align-items: center;
+  }
+
   .actions {
     font-size: 16px;
     color: #fff;
@@ -125,18 +131,16 @@ export default {
 
   .good {
     box-sizing: border-box;
-    padding: 1px;
-    font-size: 12px;
-    margin-left: 10px;
-    border: 1px solid #fff;
+    padding-top: 3px;
+    font-size: 13px;
+    margin-left: 5px;
     cursor: pointer;
     border-radius: 50%;
   }
 
   .alreadySub {
     border: none;
-    cursor: default;
-    background-color: rgb(5, 111, 232);
+    color: rgb(133, 189, 253);
   }
 
 
