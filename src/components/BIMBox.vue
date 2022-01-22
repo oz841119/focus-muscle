@@ -2,7 +2,7 @@
   <div class="BMIBox">
     <div class="top">
       <h3 class="title">BMI計算</h3>
-      <span class="closeBtn cp" @click="closeBox()">關閉</span>
+      <span class="material-icons cp"  @click="closeBox()">cancel</span>
     </div>
     <hr>
     <div class="bmiWrap">

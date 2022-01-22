@@ -2,7 +2,7 @@
   <div class="weightBox">
     <div class="top">
       <h3 class="title">重量換算</h3>
-      <span class="closeBtn cp" @click="closeBox()">關閉</span>
+      <span class="material-icons cp"  @click="closeBox()">cancel</span>
     </div>
     <hr>
     <div class="weightWrap">

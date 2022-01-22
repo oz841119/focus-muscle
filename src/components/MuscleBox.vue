@@ -2,7 +2,8 @@
   <div class="muscleBox">
     <div class="top">
       <h3 class="title">{{title}}</h3>
-      <span class="closeBtn" @click="closeBox">關閉</span>
+      <span class="material-icons cp"  @click="closeBox()">cancel</span>
+      <!-- <span class="closeBtn" @click="closeBox">關閉</span> -->
     </div>
     <hr/>
       <div class="content">
@@ -90,10 +91,6 @@ export default {
     justify-content: space-between;
     box-sizing: border-box;
     padding: 10px 20px;
-  }
-  
-  .closeBtn {
-    cursor: pointer;
   }
 
   .content {
