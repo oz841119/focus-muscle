@@ -34,7 +34,9 @@ export default {
   },
   mounted(){
     this.judgmentMuscleName(this._props.muscleName)
-    this.alreadySubmitted = JSON.parse(window.localStorage.getItem("alreadySubmitted"))
+    // window.localStorage.clear()
+    this.initLocalStorage()
+    console.log(window.localStorage);
   },
   methods: {
     closeBox() {
@@ -53,6 +55,13 @@ export default {
       }
       this.alreadySubmitted.push(item)
       window.localStorage.setItem('alreadySubmitted', JSON.stringify(this.alreadySubmitted));
+    },
+    initLocalStorage() {
+      if(window.localStorage.getItem("alreadySubmitted")){
+        this.alreadySubmitted = JSON.parse(window.localStorage.getItem("alreadySubmitted"))
+        return
+      }
+      window.localStorage.setItem('alreadySubmitted', "[]");
     }
   }
 }
