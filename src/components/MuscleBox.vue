@@ -1,16 +1,18 @@
 <template>
   <div class="muscleBox">
     <div class="top">
-      <h3 class="title">{{title}}</h3>
+      <h3 class="title">{{title}}<span class="material-icons">arrow_drop_down</span></h3>
       <span class="material-icons cp"  @click="closeBox()">cancel</span>
       <!-- <span class="closeBtn" @click="closeBox">關閉</span> -->
     </div>
     <hr/>
       <div class="content">
-        <div class="actionWrap mt8" v-for="(item,index) in trainingAction" :key="index">
-          <a class="actions" :href="'http://google.com.tw/search?q='+item"  target="_blank">{{item}}</a>
-          <!-- <span class="good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">讚</span> -->
-          <span class="material-icons good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">thumb_up</span>
+        <div class="list">
+          <div class="actionWrap" v-for="(item,index) in trainingAction" :key="index">
+            <a class="actions" :href="'http://google.com.tw/search?q='+item"  target="_blank">{{item}}</a>
+            <!-- <span class="good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">讚</span> -->
+            <span class="material-icons good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">thumb_up</span>
+          </div>
         </div>
         <div class="ps">
           <div>複合性動作皆有輔助肌群共同發力<br/>本列表提供能對該部位大量刺激的訓練動作<br/>當角度或其他部位控制不同時 可能會有不同的壓力模式<br/>解剖圖、肌群名稱及訓練動作具有非正確性 待日後修正<br/></div>
@@ -85,6 +87,15 @@ export default {
     color: #fff
   }
 
+  .title {
+    display: flex;
+  }
+
+  .title span {
+    align-self: flex-end;
+    font-size: 28px;
+  }
+
   .top {
     display: flex;
     align-items: center;
@@ -97,9 +108,18 @@ export default {
     padding: 10px 20px;
   }
 
+  .list {
+    box-sizing: border-box;
+    padding: 5px 15px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, .2);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, .1);
+  }
+
   .actionWrap {
     display: flex;
     align-items: center;
+    line-height: 2;
   }
 
   .actions {
@@ -111,7 +131,7 @@ export default {
   .ps {
     margin-top: 20px;
     font-size: 12px;
-    padding: 4px 4px;
+    padding: 5px 15px;
     box-sizing: border-box;
     background: rgba(0, 0, 0, .1);
     box-shadow: 0 25px 45px rgba(0, 0, 0, .1);

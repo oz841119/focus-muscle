@@ -24,7 +24,15 @@ npm run build
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-### 版本更新 v0.2
+
+
+### 版本更新
+
+##### 更新中
+1. 新增icon
+2. box底色變更
+
+##### v0.2
 1. 新增按讚功能 操作localStorage
 
 ### 預計更新
@@ -33,8 +41,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 3. 為動作名稱添加Google search or Youtube search link
 4. 提供意見功能實作
 5. 開發後台頁面審核意見內容並添加到內容中
-6. ~~新增功能實踐操作用戶cookies~~ (已新增 採用localStorage)
+6. ~~新增功能實踐操作用戶cookies~~ (v0.2已新增 採用localStorage)
 7. 視覺及排版整體更新
+8. 新增icon
 
 ### 已知問題
 1. SVG的Path未對肌群部位具有正確性
