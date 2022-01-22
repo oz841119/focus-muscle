@@ -25,6 +25,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 ### 版本更新 v0.2
+1. 新增按讚功能 操作localStorage
 
 ### 預計更新
 1. Mobile drive上圖片排版預計為上下排列而非左右(須更新SVG)
