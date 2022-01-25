@@ -137,7 +137,7 @@ export default {
     box-shadow: 0 25px 45px rgba(0, 0, 0, .1);
     backdrop-filter: blur(25px);
     border-radius: 10px;
-    color: #fff
+    color: #fff;
   }
 
   .advices {
