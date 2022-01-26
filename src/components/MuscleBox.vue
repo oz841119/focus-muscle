@@ -5,35 +5,40 @@
       <span class="material-icons cp"  @click="closeBox()">cancel</span>
     </div>
     <hr/>
-      <div class="content">
-        <div class="list">
-          <div class="actionWrap" v-for="(item,index) in trainingAction" :key="index">
-            <a class="actions" :href="'http://google.com.tw/search?q='+item"  target="_blank">{{item}}</a>
-            <span class="material-icons good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">thumb_up</span>
-          </div>
-        </div>
-        <div class="ps">
-          <div>複合性動作皆有輔助肌群共同發力<br/>本列表提供能對該部位大量刺激的訓練動作<br/>當角度或其他部位控制不同時 可能會有不同的壓力模式<br/>解剖圖、肌群名稱及訓練動作具有非正確性 待日後修正<br/></div>
-          <div class="advices cp">提供意見(建構中)</div>
+    <div class="content">
+      <div class="list">
+        <div class="actionWrap" v-for="(item,index) in trainingAction" :key="index">
+          <a class="actions" :href="'http://google.com.tw/search?q='+item"  target="_blank">{{item}}</a>
+          <span class="material-icons good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">thumb_up</span>
         </div>
       </div>
+      <div class="ps">
+        <div>複合性動作皆有輔助肌群共同發力<br/>本列表提供能對該部位大量刺激的訓練動作<br/>當角度或其他部位控制不同時 可能會有不同的壓力模式<br/>解剖圖、肌群名稱及訓練動作具有非正確性 待日後修正<br/></div>
+        <div class="advices cp" @click="suggestion()">提供訓練動作(建構中)</div>
+        <SuggestionBox :title="title" :muscleName="muscleName" v-if="isSuggestion"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// import trainingActionJSON from '../assets/json/trainingAction.json'
+import SuggestionBox from './SuggestionBox.vue'
 export default {
+  components: {
+    SuggestionBox,
+  },
   props: ['muscleName'],
   data() {
     return {
       title: '',
       trainingAction: '',
       alreadySubmitted: [],
+      isSuggestion: false,
     }
   },
   created() {
-    this.title = this._props.muscleName
-    this.getActions('get', 'data', this.title)
+    this.title = this.muscleName
+    this.getActions('get', 'actions', this.title)
   },
   mounted(){
     this.initLocalStorage()
@@ -71,8 +76,11 @@ export default {
         }
       }
       xhr.send()
-    }
-  }
+    },
+    suggestion() {
+      this.isSuggestion = !this.isSuggestion
+    },
+  },
 }
 </script>
 

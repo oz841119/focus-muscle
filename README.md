@@ -28,11 +28,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 版本更新
 
-##### 更新中
+##### v0.3
 1. 新增icon
 2. box底色變更
 3. 更改字體
 4. 訓練動作由本地JSON靜態文件改為網路請求Firebase RESTful Api
+5. 意見功能實裝: 網路請求Firebase RESTful Api
 
 ##### v0.2
 1. 新增按讚功能 操作localStorage
@@ -41,7 +42,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 1. Mobile drive上圖片排版預計為上下排列而非左右(須更新SVG)
 2. 目前採用靜態JSON文件傳入內容，預計改為Firebase進行數據請求
 3. 為動作名稱添加Google search or Youtube search link
-4. 提供意見功能實作
+4. ~~提供意見功能實作~~ (v0.3已新增)
+4. 意見功能限制提交次數 防止不斷提交
 5. 開發後台頁面審核意見內容並添加到內容中
 6. ~~新增功能實踐操作用戶cookies~~ (v0.2已新增 採用localStorage)
 7. 視覺及排版整體更新
