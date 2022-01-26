@@ -3,14 +3,12 @@
     <div class="top">
       <h3 class="title">{{title}}<span class="material-icons">arrow_drop_down</span></h3>
       <span class="material-icons cp"  @click="closeBox()">cancel</span>
-      <!-- <span class="closeBtn" @click="closeBox">關閉</span> -->
     </div>
     <hr/>
       <div class="content">
         <div class="list">
           <div class="actionWrap" v-for="(item,index) in trainingAction" :key="index">
             <a class="actions" :href="'http://google.com.tw/search?q='+item"  target="_blank">{{item}}</a>
-            <!-- <span class="good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">讚</span> -->
             <span class="material-icons good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">thumb_up</span>
           </div>
         </div>
@@ -23,7 +21,7 @@
 </template>
 
 <script>
-import trainingActionJSON from '../assets/json/trainingAction.json'
+// import trainingActionJSON from '../assets/json/trainingAction.json'
 export default {
   props: ['muscleName'],
   data() {
@@ -33,18 +31,16 @@ export default {
       alreadySubmitted: [],
     }
   },
+  created() {
+    this.title = this._props.muscleName
+    this.getActions('get', 'data', this.title)
+  },
   mounted(){
-    this.judgmentMuscleName(this._props.muscleName)
     this.initLocalStorage()
-    console.log(window.localStorage);
   },
   methods: {
     closeBox() {
       this.$emit('muscleClickFatherFn')
-    },
-    judgmentMuscleName(propsMuscleName) {
-      this.title = trainingActionJSON[propsMuscleName].name
-      this.trainingAction = trainingActionJSON[propsMuscleName].actions
     },
     submitGood(item) { // 按讚後push進數組 
       if(this.alreadySubmitted.includes(item)){ // 判斷是否按過讚 若按過則移除元素
@@ -62,6 +58,19 @@ export default {
         return
       }
       window.localStorage.setItem('alreadySubmitted', "[]");
+    },
+    getActions(method, traget, propsMuscleName) {
+      let xhr = new XMLHttpRequest()
+      let url = `https://focus-muscle-default-rtdb.asia-southeast1.firebasedatabase.app/${traget}.json`
+      xhr.open(method, url, true)
+      xhr.onreadystatechange = () => { // 留意: 箭頭函數才會指向Vue 用表達式則會指向xhr
+        if(xhr.status == 200 && xhr.readyState == 4) {
+          let data = xhr.responseText
+          this.title = JSON.parse(data)[propsMuscleName].name
+          this.trainingAction = JSON.parse(data)[propsMuscleName].actions
+        }
+      }
+      xhr.send()
     }
   }
 }
