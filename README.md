@@ -31,6 +31,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ##### 更新中
 1. 新增icon
 2. box底色變更
+3. 更改字體
+4. 訓練動作由本地JSON靜態文件改為網路請求Firebase RESTful Api
 
 ##### v0.2
 1. 新增按讚功能 操作localStorage
