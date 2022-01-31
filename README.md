@@ -35,6 +35,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### 版本更新
 ##### v0.4
 1. 簡易後台管理系統完成
+2. MuscleBox開啟後 點擊非Box內容可以關閉Box
 
 ##### v0.3
 1. 新增icon

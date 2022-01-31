@@ -1,5 +1,5 @@
 <template>
-  <div class="muscleBox">
+  <div class="muscleBox" id="muscleBox">
     <div class="top">
       <h3 class="title">{{title}}<span class="material-icons">arrow_drop_down</span></h3>
       <span class="material-icons cp"  @click="closeBox()">cancel</span>
@@ -41,7 +41,12 @@ export default {
     this.getActions('get', 'actions', this.title)
   },
   mounted(){
+    this.clickListener()
     this.initLocalStorage()
+  },
+  beforeDestroy() {
+    console.log(123213);
+    document.removeEventListener("click", this.listenerFn,true)
   },
   methods: {
     closeBox() {
@@ -80,6 +85,17 @@ export default {
     suggestion() {
       this.isSuggestion = !this.isSuggestion
     },
+    clickListener() { // 監聽發生在Box外的點擊
+      document.addEventListener("click",this.listenerFn,true)
+    },
+    listenerFn(e) {
+      console.log(e);
+      let a = document.getElementById('muscleBox')
+      if(e.path.indexOf(a) < 0) {
+        this.$emit('muscleClickFatherFn') 
+      }
+    }
+    // 待補: 移除監聽器
   },
 }
 </script>

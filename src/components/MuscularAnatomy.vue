@@ -185,13 +185,14 @@ export default {
 <style scoped>
 
   .muscularAnatomy {
-    position: absolute;
-    width: 80vw;
-    left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
+    width: 100vw;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
   .svgContainer {
@@ -203,8 +204,9 @@ export default {
     .muscularAnatomy {
       width: 100vw;
     }
+
     .svgContainer {
-      width: 100vW;
+      width: 100vw;
     }
   }
 
