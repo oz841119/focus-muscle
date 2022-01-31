@@ -8,7 +8,7 @@
     <div class="weightWrap">
       <input type="number" oninput="if(value.length>16)value=value.slice(0,16)" class="inputBox" v-model="manyUnit">
       <br>
-      <div class="options">
+      <div class="options mt8">
         <span class="mr8"><input type="radio" value="kg" name="isUnit" v-model="isUnit">公斤(kg)</span>
         <span class="mr8"><input type="radio" value="g" name="isUnit" v-model="isUnit">公克(g)</span>
         <span><input type="radio" value="lb" name="isUnit" v-model="isUnit">磅(lb)</span>

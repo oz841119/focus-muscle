@@ -7,7 +7,7 @@
     <hr>
     <div class="bmiWrap">
       <div>身高<input type="number" v-model="height" oninput="if(value.length>16)value=value.slice(0,16)" class="inputBox">公分</div>
-      <div>體重<input type="number" v-model="weight" oninput="if(value.length>16)value=value.slice(0,16)" class="inputBox">公斤</div>
+      <div class="mt8" >體重<input type="number" v-model="weight" oninput="if(value.length>16)value=value.slice(0,16)" class="inputBox">公斤</div>
     </div>
     <div class="container">BMI: {{(Number(bmi))}}</div>
   </div>
@@ -70,16 +70,17 @@ export default {
   }
 
   .bmiWrap {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     padding: 10px 20px;
     background: rgba(0, 0, 0, .1);
   }
 
-  .inputBox {
+  /* .inputBox {
     box-sizing: border-box;
     margin: 0 6px;
-    /* width: 100%; */
-  }
+  } */
 
   .container {
     padding: 10px 20px;
@@ -89,7 +90,7 @@ export default {
 
 
   @media (max-width: 850px) {
-    .weightBox {
+    .BMIBox {
       width: 95vw;
     }
   }
