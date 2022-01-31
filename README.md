@@ -5,7 +5,10 @@
 <https://github.com/oz841119/focus-muscle-admin>
 
 
-# focus-muscle
+# FocusMuscle
+基於Vue2的SPA，主要用於查看某肌群的鍛鍊方式  
+以Firebase作為數據庫
+使用原生AJAX對Firebase RESTful API請求及提交數據，而非Firebase提供的方法(後台管理系統使用Firebase Web API)
 
 ## Project setup
 ```
@@ -29,6 +32,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 ### 版本更新
+##### v0.4
+1. 簡易後台管理系統完成
 
 ##### v0.3
 1. 新增icon
@@ -42,11 +47,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 預計更新
 1. Mobile drive上圖片排版預計為上下排列而非左右(須更新SVG)
-2. 目前採用靜態JSON文件傳入內容，預計改為Firebase進行數據請求
-3. 為動作名稱添加Google search or Youtube search link
+2. ~~目前採用靜態JSON文件傳入內容，預計改為Firebase進行數據請求~~
+3. ~~為動作名稱添加Google search or Youtube search link~~
 4. ~~提供意見功能實作~~ (v0.3已新增)
 4. 意見功能限制提交次數 防止不斷提交
-5. 開發後台頁面審核意見內容並添加到內容中
+5. ~~開發後台頁面審核意見內容並添加到內容中
 6. ~~新增功能實踐操作用戶cookies~~ (v0.2已新增 採用localStorage)
 7. 視覺及排版整體更新
 8. 新增icon
