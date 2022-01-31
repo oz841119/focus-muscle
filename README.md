@@ -7,8 +7,9 @@
 
 # FocusMuscle
 基於Vue2的SPA，主要用於查看某肌群的鍛鍊方式  
-以Firebase作為數據庫
-使用原生AJAX對Firebase RESTful API請求及提交數據，而非Firebase提供的方法(後台管理系統使用Firebase Web API)
+以Firebase作為數據庫  
+使用原生AJAX對Firebase RESTful API請求及提交數據  
+而非Firebase提供的方法(後台管理系統使用Firebase Web API)
 
 ## Project setup
 ```
@@ -51,7 +52,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 3. ~~為動作名稱添加Google search or Youtube search link~~
 4. ~~提供意見功能實作~~ (v0.3已新增)
 4. 意見功能限制提交次數 防止不斷提交
-5. ~~開發後台頁面審核意見內容並添加到內容中
+5. ~~開發後台頁面審核意見內容並添加到內容中~~
 6. ~~新增功能實踐操作用戶cookies~~ (v0.2已新增 採用localStorage)
 7. 視覺及排版整體更新
 8. 新增icon
