@@ -1,5 +1,5 @@
 <template>
-  <div class="navBar">
+  <div class="navBar" id="navBar">
     <h1 class="title">
       <h2>FOUCS</h2>
       <h2>MUSCLE</h2>

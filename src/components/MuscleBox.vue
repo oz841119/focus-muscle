@@ -45,29 +45,30 @@ export default {
     this.initLocalStorage()
   },
   beforeDestroy() {
-    console.log(123213);
-    document.removeEventListener("click", this.listenerFn,true)
+    document.removeEventListener("click", this.listenerFn,true) // 移除監聽器
   },
   methods: {
     closeBox() {
-      this.$emit('muscleClickFatherFn')
+      this.$emit('muscleClickFatherFn') // 關閉Box組件
     },
+
     submitGood(item) { // 按讚後push進數組 
       if(this.alreadySubmitted.includes(item)){ // 判斷是否按過讚 若按過則移除元素
         let itemIndex = this.alreadySubmitted.indexOf(item)
         this.alreadySubmitted.splice(itemIndex, 1)
-        window.localStorage.setItem('alreadySubmitted', JSON.stringify(this.alreadySubmitted));
+        window.localStorage.setItem('alreadySubmitted', JSON.stringify(this.alreadySubmitted)); // 處理完成後重整訓練動作存入localStorage
         return
       }
       this.alreadySubmitted.push(item)
       window.localStorage.setItem('alreadySubmitted', JSON.stringify(this.alreadySubmitted));
     },
-    initLocalStorage() {
-      if(window.localStorage.getItem("alreadySubmitted")){
+
+    initLocalStorage() { // 初始化localStorage
+      if(window.localStorage.getItem("alreadySubmitted")){ // 如果localStorage有alreadySubmitted 則直接調出來用
         this.alreadySubmitted = JSON.parse(window.localStorage.getItem("alreadySubmitted"))
         return
       }
-      window.localStorage.setItem('alreadySubmitted', "[]");
+      window.localStorage.setItem('alreadySubmitted', "[]"); // 若無則新建
     },
     getActions(method, traget, propsMuscleName) {
       let xhr = new XMLHttpRequest()
@@ -85,17 +86,20 @@ export default {
     suggestion() {
       this.isSuggestion = !this.isSuggestion
     },
+
     clickListener() { // 監聽發生在Box外的點擊
       document.addEventListener("click",this.listenerFn,true)
     },
-    listenerFn(e) {
-      console.log(e);
-      let a = document.getElementById('muscleBox')
-      if(e.path.indexOf(a) < 0) {
+
+    listenerFn(e) { // 監聽器事件
+      let muscleBoxNode = document.getElementById('muscleBox')
+      let navBarNode = document.getElementById('navBar') // 網頁頂部navBar節點
+      let isMuscleBoxChildNode = muscleBoxNode.contains(e.target); // 判斷點擊區域是否為MuscleBox 如果是將返回true
+      let isNavBarChildNode = navBarNode.contains(e.target)
+      if(!isMuscleBoxChildNode && !isNavBarChildNode) {
         this.$emit('muscleClickFatherFn') 
       }
     }
-    // 待補: 移除監聽器
   },
 }
 </script>

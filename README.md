@@ -36,6 +36,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ##### v0.4
 1. 簡易後台管理系統完成
 2. MuscleBox開啟後 點擊非Box內容可以關閉Box
+3. 點擊頂部Bar以及其子組件時不會關閉MuscleBox
+4. 新增一些註釋
 
 ##### v0.3
 1. 新增icon
@@ -57,6 +59,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 6. ~~新增功能實踐操作用戶cookies~~ (v0.2已新增 採用localStorage)
 7. 視覺及排版整體更新
 8. 新增icon
+9. 讀取數據時進行loading動畫
 
 ### 已知問題
 1. SVG的Path未對肌群部位具有正確性
