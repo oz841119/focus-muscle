@@ -39,7 +39,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 3. 點擊頂部Bar以及其子組件時不會關閉MuscleBox
 4. 新增一些註釋
 
-##### v0.3
+##### v0.3 (上線版本)
 1. 新增icon
 2. box底色變更
 3. 更改字體
