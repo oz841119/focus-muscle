@@ -32,7 +32,7 @@ export default {
   props: ['muscleName'],
   data() {
     return {
-      title: '',
+      title: 'Loading...',
       trainingAction: '',
       alreadySubmitted: [],
       isSuggestion: false,
@@ -42,8 +42,7 @@ export default {
   },
   created() {
     this.isLoading = true
-    this.title = this.muscleName
-    this.getActions('get', 'actions', this.title)
+    this.getActions('get', 'actions', this.muscleName)
   },
   mounted(){
     this.clickListener()
