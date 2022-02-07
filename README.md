@@ -33,6 +33,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 ### 版本更新
+
+##### v0.5
+1. 增加提交時的驗證
+2. 點擊網站標題可以返回網站首頁 (目前未使用route 所以沒有太大用處)
+3. 訓練部位的標題預設為Loading 網路請求成功時才會替換為中文名稱 (不再是父組件傳入的肌肉名稱) 
+4. 新增網站的圖標及title
+5. 打包時(npm run build)可以獲得與專案資料夾相同的資料夾名稱
+
 ##### v0.4 (當前上線版本)
 1. 簡易後台管理系統完成
 2. MuscleBox開啟後 點擊非Box內容可以關閉Box
