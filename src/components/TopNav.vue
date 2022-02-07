@@ -50,6 +50,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
+    height: 60px;
     color: #fff;
     background: #000000;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
