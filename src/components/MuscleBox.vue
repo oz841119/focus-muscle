@@ -6,7 +6,9 @@
     </div>
     <hr/>
     <div class="content">
+      <div class="loading" v-show="isLoading">Loading中...</div>
       <div class="list">
+        <div class="noHaveActions" v-show="isNohaveActions">目前沒有訓練動作，可以主動提供呦</div>
         <div class="actionWrap" v-for="(item,index) in trainingAction" :key="index">
           <a class="actions" :href="'http://google.com.tw/search?q='+item"  target="_blank">{{item}}</a>
           <span class="material-icons good" @click="submitGood(item)" :class="{alreadySub: alreadySubmitted.includes(item)}">thumb_up</span>
@@ -34,9 +36,12 @@ export default {
       trainingAction: '',
       alreadySubmitted: [],
       isSuggestion: false,
+      isLoading: false,
+      isNohaveActions: false
     }
   },
   created() {
+    this.isLoading = true
     this.title = this.muscleName
     this.getActions('get', 'actions', this.title)
   },
@@ -79,6 +84,10 @@ export default {
           let data = xhr.responseText
           this.title = JSON.parse(data)[propsMuscleName].name
           this.trainingAction = JSON.parse(data)[propsMuscleName].actions
+          this.isLoading = false
+          if(!this.trainingAction) {
+            this.isNohaveActions = true
+          }
         }
       }
       xhr.send()
