@@ -220,12 +220,12 @@ export default {
 
   /* 無效區域色 */
   .cls-1 { 
-    fill: #fff
+    fill: rgba(228, 228, 228, .3)
   }
 
   /* 疑慮色 */
   .cls-2 {
-    fill: rgb(219, 219, 219)
+    fill: rgba(255, 226, 226, .7)
   }
 
   .cls-2:hover {
@@ -237,10 +237,10 @@ export default {
   }
 
   .vaild {
-    fill: rgb(185, 185, 185)
+    fill: rgba(255, 168, 168, .9)
   }
 
   .vaild:hover {
-    fill: #94ebf7
+    fill: #b3f9ff
   }
 </style>
