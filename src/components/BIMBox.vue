@@ -84,7 +84,7 @@ export default {
 
   .container {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 12px;
   }
 
 
