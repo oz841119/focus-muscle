@@ -1,9 +1,9 @@
 <template>
   <div class="navBar" id="navBar">
-    <h1 class="title">
+    <a class="title" href="/">
       <h2>FOUCS</h2>
       <h2>MUSCLE</h2>
-    </h1>
+    </a>
     <div class="rightNav">
       <div @click="openWeightBox()">重量換算</div>
       <div @click="openBMIBox">BMI計算</div>
@@ -62,6 +62,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
     height: 100%;
     font-weight: 700;
     font-size: 16px;
