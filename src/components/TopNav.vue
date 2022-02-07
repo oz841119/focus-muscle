@@ -49,7 +49,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 8vh;
+    min-height: 8vh;
     padding: 0 40px;
     color: #fff;
     background: #000000;  /* fallback for old browsers */
