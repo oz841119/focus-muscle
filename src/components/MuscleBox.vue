@@ -16,7 +16,7 @@
       </div>
       <div class="ps">
         <div>複合性動作皆有輔助肌群共同發力<br/>本列表提供能對該部位大量刺激的訓練動作<br/>當角度或其他部位控制不同時 可能會有不同的壓力模式<br/>解剖圖、肌群名稱及訓練動作具有非正確性 待日後修正<br/></div>
-        <div class="advices cp" @click="suggestion()">提供訓練動作(建構中)</div>
+        <div class="advices cp" @click="toggleSuggestion()">提供訓練動作(建構中)</div>
         <SuggestionBox :title="title" :muscleName="muscleName" v-if="isSuggestion"/>
       </div>
     </div>
@@ -34,8 +34,8 @@ export default {
     return {
       title: 'Loading...',
       trainingAction: '',
-      alreadySubmitted: [],
-      isSuggestion: false,
+      alreadySubmitted: [], // 用於存入localStorage 
+      isSuggestion: false, 
       isLoading: false,
       isNohaveActions: false
     }
@@ -74,6 +74,7 @@ export default {
       }
       window.localStorage.setItem('alreadySubmitted', "[]"); // 若無則新建
     },
+
     getActions(method, traget, propsMuscleName) {
       let xhr = new XMLHttpRequest()
       let url = `https://focus-muscle-default-rtdb.asia-southeast1.firebasedatabase.app/${traget}.json`
@@ -91,7 +92,8 @@ export default {
       }
       xhr.send()
     },
-    suggestion() {
+
+    toggleSuggestion() {
       this.isSuggestion = !this.isSuggestion
     },
 
